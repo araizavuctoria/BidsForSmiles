@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+  <meta charset="UTF-8">
+  <title>Bids For Smiles</title>
+
+
+
+
+  <style>
+
+
+
+
+    body {
+      background-color: #F8F4E1; 
+
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      color: #A31D1D;
+      padding-top: 45%;
+      font-weight: bold; 
+      font-size: 29px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+    #cuenta {
+      font-size: 48px;
+      margin-top: 20px;
+      color: black;
+
+
+    }
+
+    h2 {
+      font-size: 60px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+
+    }
+  </style>
+</head>
+<body>
+	<img src="img/bidsforsmile.png" width="400" height="600">
+  <br></br>
+  <h1>Next Auction of Bids For Smiles May 18</h1>
+  <div id="cuenta">Loading...</div>
+  <br>  </br>
+  <br> </br>
+  <br> <img src="img/imgbfs.jpg"  width="450" height="300"> </br>
+
+  <br></br>
+  <br>  
+  <p>Our mission is to create a connection between donors and children who need these donations. 
+  <br>Through our auctions, you will be able to learn the story of each child and take home a small part of their beautiful creation.
+  <br>Your donation would help millions of children around the world receive proper nutrition and education.</br></p>
+    
+  
+    <h2> Small Hands, Big Dreams </h2>
+<hr>
+  <br>  
+  <div class="card">
+<p>These crafts from 200 kids are a way of raising the interest of all the participant kids in art and design, not also that but also a way to help to sustain them for the future, assuring better people for our future society.</p>
+</br> 
+</div>
+
+<br>
+<img src="img/uno.jpg"  width="300" height="250" border="5">
+<img src="img/dos.jpg"  width="300" height="250" border="5"> </br> <br>
+<img src="img/tres.jpg"  width="300" height="250" border="5"><img src="img/cuatro.jpg"  width="300" height="250" border="5">  </br> <br>
+<img src="img/cinco.jpg"  width="300" height="250" border="5"><img src="img/seis.jpg"  width="300" height="250" border="5"> </br> <br>
+<img src="img/siete.jpg"  width="300" height="250" border="5"><img src="img/ocho.jpg"  width="300" height="250" border="5">  </br> <br>
+<img src="img/nueve.jpg"  width="300" height="250" border="5" ><img src="img/diez.jpg"  width="300" height="250" border="5"> 
+</br>
+  <script>
+    // Fecha objetivo (18 de mayo de este año a las 00:00:00)
+    const fechaObjetivo = new Date("May 18, 2025 00:00:00").getTime();
+
+    const cuentaRegresiva = setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaObjetivo - ahora;
+
+      if (diferencia <= 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("cuenta").innerHTML = "¡May 18!";
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("cuenta").innerHTML =
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
